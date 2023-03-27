@@ -4,7 +4,6 @@ from .locators import ProductPageLocators
 
 class PageObject(BasePage):
     def add_to_basket(self):
-        time.sleep(5)
         button = self.browser.find_element_by_class_name("btn.btn-lg.btn-primary.btn-add-to-basket")
         button.click()
 

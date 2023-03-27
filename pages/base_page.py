@@ -16,6 +16,14 @@ class BasePage():
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
+    
+    def go_to_basket(self):
+        button = self.browser.find_element_by_class_name("btn.btn-default")
+        button.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                 " probably unauthorised user"
 
     def is_disappeared(self, how, what, timeout=4):
         try:
